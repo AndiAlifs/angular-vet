@@ -25,6 +25,16 @@ export class AccountService {
     
   }
 
+  deleteAccount(id: number): Observable<Account> {
+    return this.http.delete<Account>(this.baseUrl + 'rekening/' + id)
+                    .pipe(retry(1), catchError(this.errorHandling));
+  }
+
+  updateAccount(id: number, name: string, balance: number, norek: string): Observable<Account> {
+    return this.http.put<Account>(this.baseUrl + 'rekening/' + id, { nama: name, saldo: balance, norek: norek}, this.httpOptions)
+                    .pipe(retry(1), catchError(this.errorHandling));
+  }
+
   errorHandling(error: any) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
