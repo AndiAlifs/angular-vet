@@ -1,1 +1,5 @@
-<p>account works!</p>
+<li class="card mt-4" *ngFor="let account of accounts">
+    <button class="btn btn-primary" (click)="onSelect(account)" type="button">{{account.norek}}</button>
+</li>
+
+<app-account-detail [account]="selectedAccount"></app-account-detail>

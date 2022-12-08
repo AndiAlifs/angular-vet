@@ -1,0 +1,5 @@
+<div class="card mt-4" *ngIf="account">
+    <div class="card-header">{{account.norek}} a.n {{ account.nama }}</div>
+    <div class="card-body"><b>Saldo : </b>
+    <input class="form-class" [(ngModel)]="account.saldo">
+</div>
