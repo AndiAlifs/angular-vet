@@ -9,7 +9,8 @@
         <input class="form-class" [(ngModel)]="account.saldo" name="saldo">
     </div>
     <div class="card-footer">
-        <button class="btn btn-primary" (click)="onSave(account.saldo)">Simpan</button>
-        <button class="btn btn-danger" (click)="onDelete()">Hapus</button>
+        <button class="btn btn-primary mr-2" (click)="onSave(account.saldo)">Simpan</button>
+        <button class="btn btn-danger mr-2" (click)="onDelete()">Hapus</button>
+        <button class="btn btn-warning mr-2" (click)="reset()">Reset Selection</button>
     </div>
 </div>

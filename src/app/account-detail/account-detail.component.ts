@@ -23,7 +23,7 @@ export class AccountDetailComponent {
       this.accountService.deleteAccount(this.account.id)
         .subscribe();
       this.accountComponent.loadAccounts();
-      this.account = undefined;
+      this.reset();
     }
   }
 
@@ -33,5 +33,9 @@ export class AccountDetailComponent {
         .subscribe();
     }
     this.accountComponent.loadAccounts();
+  }
+
+  reset(): void {
+    this.account = undefined;
   }
 }
